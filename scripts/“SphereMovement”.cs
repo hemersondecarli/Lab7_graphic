@@ -5,17 +5,11 @@ public class ExampleClass : MonoBehaviour
 {
     void Update()
     {
-        // Move the object forward along its z axis 1 unit/second.
-        transform.Translate(0, 0, Time.deltaTime * 2);
-
         // Move the object upward in world space 1 unit/second.
-        transform.Translate(0, Time.deltaTime, 0, Space.World);
-    }
-
-    void OnGUI()
-    {
-        if (Event.current.Equals(Event.KeyboardEvent(KeyCode.Space.ToString())))
+  
+        if (Input.GetKeyDown(KeyCode.Space))
         {
+          transform.Translate(0, Time.deltaTime * 30, 0, Space.World);
             Debug.Log("Space key is pressed.");
         }
     }
